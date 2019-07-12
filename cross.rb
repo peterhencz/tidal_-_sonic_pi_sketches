@@ -21,12 +21,12 @@ live_loop :k_hh do
   with_fx :lpf, cutoff: 120 do
     with_fx :echo, phase: 0.75, decay: 4, pre_mix: 0.3 do
 
-      # sample :drum_cymbal_soft, 
-      #     attack: 0.01, 
-      #     sustain: 0.01, 
-      #     release: 0.1, ## range 0.01-0.5
-      #     amp: 0.1
-      #   sleep 0.25
+      sample :drum_cymbal_soft, 
+          attack: 0.01, 
+          sustain: 0.01, 
+          release: 0.1, ## range 0.01-0.5
+          amp: 0.1
+        sleep 0.25
 
     end
   end
@@ -64,16 +64,16 @@ live_loop :play, delay: -1 do
 end
 
 
-# live_loop :piano_s do
-#   sync :kick_sub
-#   with_fx :echo, phase: 0.75, decay: 4, pre_mix: 1 do
-#     with_fx :lpf, cutoff: 130 do
-#       use_synth :dark_ambience
-#       play 75, pan: 1.6, release: (rel *3)
-#       sleep 1
-#         play 72, pan: -1.6, release: (rel *3)
-#         play 79, pan: 1.6, release: (rel)
-#       sleep 2
-#     end
-#   end
-# end
+live_loop :piano_s do
+  sync :kick_sub
+  with_fx :echo, phase: 0.75, decay: 4, pre_mix: 1 do
+    with_fx :lpf, cutoff: 130 do
+      use_synth :dark_ambience
+      play 75, pan: 1.6, release: (rel *3)
+      sleep 1
+        play 72, pan: -1.6, release: (rel *3)
+        play 79, pan: 1.6, release: (rel)
+      sleep 2
+    end
+  end
+end

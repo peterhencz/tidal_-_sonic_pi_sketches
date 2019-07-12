@@ -7,12 +7,12 @@
 #   end
 # end
 
-# with_fx :reverb, mix: 0.8 do
-#   loop do
-#     play scale(:C3, :minor_pentatonic, num_octaves: 3).choose, release: 0.1, amp: rand
-#     sleep 0.1
-#   end
-# end
+with_fx :reverb, mix: 0.8 do
+  loop do
+    play scale(:C3, :minor_pentatonic, num_octaves: 3).choose, release: 0.1, amp: rand
+    sleep 0.1
+  end
+end
 
 
 live_loop :guit do
