@@ -2,42 +2,48 @@
 setcps (90/60/4)
 
 d1 
-  -- $ s "909 909 909 ~909*2"
+-- $ s "909 909 909 ~909*2"
   $ s "909*5"
+  # lpf 1000
+  # shape 0.5
   # gain 1
 
 d1 silence
 
 d2 
-  $ stut 8 0.5 0.1
+  $ stut 4 0.5 0.1
   $ s "bd*4"
   # hpf 110
 
 d2 silence
 
+
 d3 
-  $ every 1 (0.5 ~>)
-  $ s "808oh:2*5"
-  # shape 0.95
-  # gain 0.4
-  # shape 0.9
+$ every 1 (0.5 ~>)
+$ s "808oh:2*5"
+# shape 0.95
+# gain 0.4
+# shape 0.9
 
 d3 silence
 
--- d4 
---   $ n "d3 ~"
---   # s "supersaw"
---   # legato 2
---   # lpf 400
---   # shape 0.2
---   # gain 0.6
+d4 
+$ n "d3 ~ f3*3"
+# s "supersaw"
+# legato 4
+# lpf 1000
+# shape 0.8
+# gain 0.5
 
 d4 silence
 
 d5 
-  $ s "808oh*20"
-  # gain 0.8
+$ s "808oh*20" # pan sine
+# lpf 3000
+# gain 0.8
 
 d5 silence
+
+d6
 
 hush
