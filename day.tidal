@@ -1,0 +1,39 @@
+
+setcps (90/60/4)
+
+d1 
+   $ s "909 909 909 ~909*2"
+  -- $ s "909*4"
+  # gain 1
+
+d1 silence
+
+d2 
+  $ stut 8 0.5 0.1
+  $ s "bd*4"
+  # hpf 110
+
+d2 silence
+
+d3
+  $ s "cp ~"
+  # lpf 1000
+  # delay 0.6
+  # delayt 0.4
+  # delayfb 0.4
+  # shape 0.95
+  # gain 0.5
+
+d3 silence
+
+d4 
+  $ n "d3 ~"
+  # s "supersaw"
+  # legato 2
+  # lpf 400
+  # shape 0.2
+  # gain 0.6
+
+d4 silence
+
+hush
